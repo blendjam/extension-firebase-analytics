@@ -3,6 +3,7 @@ package com.defold.firebase.analytics;
 import android.app.Activity;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
@@ -18,6 +19,7 @@ public class FirebaseAnalyticsJNI {
     public static native void firebaseAddToQueue(int msg, String json);
 
     private FirebaseAnalytics firebaseAnalytics;
+    private FirebaseCrashlytics crashlytics;
     private Activity activity;
 
     private static final int MSG_ERROR              = 0;
@@ -29,6 +31,9 @@ public class FirebaseAnalyticsJNI {
 
     public void initialize() {
         this.firebaseAnalytics = FirebaseAnalytics.getInstance(activity);
+        this.crashlytics = FirebaseCrashlytics.getInstance();
+        this.crashlytics.sendUnseenReports();
+        this.crashlytics.setCrashlyticsCollectionEnabled(true);
     }
 
     public void getInstanceId() {
@@ -49,6 +54,7 @@ public class FirebaseAnalyticsJNI {
 
     public void setUserId(String id) {
         firebaseAnalytics.setUserId(id);
+        crashlytics.setUserId(id);
     }
 
     public void setUserProperty(String name, String value) {

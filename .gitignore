@@ -18,3 +18,7 @@ Info.plist
 /debug.keystore.pass.txt
 /manifest.private.der
 /manifest.public.der
+/.editor_settings
+/.vscode
+/bundle
+/.defold/api

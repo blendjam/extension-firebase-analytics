@@ -8,3 +8,4 @@
 -keep,includedescriptorclasses public class com.google.firebase.example.LoggingUtils { * ; }
 -keep,includedescriptorclasses public class com.google.firebase.analytics.FirebaseAnalytics { *; }
 -keep,includedescriptorclasses public class com.google.firebase.example.LoggingUtils { * ; }
+-keep,includedescriptorclasses public class com.google.firebase.crashlytics.FirebaseCrashlytics; { * ; }

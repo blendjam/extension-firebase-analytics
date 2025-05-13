@@ -23,15 +23,18 @@ shared_state = 1
 include_dirs = firebase_analytics
 
 [ios]
-bundle_identifier = com.defold.firebase
+bundle_identifier = com.bhoos.carrom
 infoplist = /builtins/manifests/ios/Info.plist
 
 [android]
-package = com.defold.firebase
+package = com.bhoos.carrom
 
 [osx]
-bundle_identifier = com.defold.firebase
+bundle_identifier = com.bhoos.carrom
 
 [native_extension]
 app_manifest = /generated.appmanifest
+
+[physics]
+scale = 0.01
 
